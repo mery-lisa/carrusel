@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.5.4/swiper-bundle.min.css">
+    <style>
+        /* Estilos CSS personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .swiper-container {
+            width: 90%;
+            max-width: 800px; /* Limita el ancho máximo del carrusel */
+            margin: 0 auto; /* Centra el carrusel horizontalmente */
+            padding: 20px 0; /* Añade espacio arriba y abajo del carrusel */
+        }
+
+        .swiper-slide {
+            text-align: center;
+            background: #c5f5e2;
+            margin-right: 10px; /* Agrega un margen a la derecha de cada diapositiva */
+            border-radius: 10px;
+            width: 30%; /* Ancho de cada diapositiva */
+            display: inline-block; /* Para que estén en línea */
+            vertical-align: top; /* Alineación superior */
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%; /* Asegura que la imagen no supere su tamaño máximo */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px; /* Añade espacio entre las imágenes */
+        }
+
+        .swiper-slide-description {
+            margin-top: 10px; /* Añade espacio entre la imagen y la descripción */
+        }
+
+        /* Estilos para el título */
+        h1 {
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Estilos para el juego de adivinanzas */
+        #quiz {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #questions {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        #questions select {
+            margin-right: 10px;
+        }
+
+        #check-answer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Galería de Fotos</h1>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <h2>el mundo de las delicias</h2>
+                <img src="img/685c8ec18eea07136182a85e23c358a1.jpg" alt="imagen1">
+                <div class="swiper-slide-description">
+                    <p>Hermoso paisaje.</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2>majestuoso</h2>
+                <img src="img/71a9011f4a9bc3da7ed91eff6ae0348f.jpg" alt="Imagen 2">
+                <div class="swiper-slide-description">
+                    <p>Las imágenes más bellas vistas</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2>naturaleza pura</h2>
+                <img src="img/863795c5bd3527d438e17d90d1c770a9.jpg" alt="imagen3">
+                <div class="swiper-slide-description">
+                    <p>Excelente paisaje</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2>encantador</h2>
+                <img src="img/8deda3342db3f1e78d13a47969799849.jpg" alt="Imagen 4">
+                <div class="swiper-slide-description">
+                    <p>El mundo de las maravillas</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2>atractivo</h2>
+                <img src="img/9af995f07bd6082d1085ae22b243610d.jpg" alt="Imagen 5">
+                <div class="swiper-slide-description">
+                    <p>Fondo vistoso </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <h2>luminoso</h2>
+                <img src="img/a63d526ca11ab51ee1f98766705c17fd.jpg" alt="Imagen 6">
+                <div class="swiper-slide-description">
+                    <p>Es perfecto</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="quiz">
+        <div id="questions">
+            <label for="question">¿Cuál es el sentimiento que evoca la imagen seleccionada?</label>
+            <select id="question">
+                <option value="0">Selecciona una imagen</option>
+                <option value="1">El mundo de las delicias</option>
+                <option value="2">Majestuoso</option>
+                <option value="3">Naturaleza pura</option>
+                <option value="4">Encantador</option>
+                <option value="5">Atractivo</option>
+                <option value="6">Luminoso</option>
+            </select>
+            <button id="check-answer" onclick="checkAnswer()">Comprobar respuesta</button>
+        </div>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var question = document.getElementById("question").value;
+            var answer = "";
+
+            switch (question) {
+                case "1":
+                    answer = "Paz y tranquilidad";
+                    break;
+                case "2":
+                    answer = "Asombro";
+                    break;
+                case "3":
+                    answer = "Sereno";
+                    break;
+                case "4":
+                    answer = "Fascinación";
+                    break;
+                case "5":
+                    answer = "Alegría";
+                    break;
+                case "6":
+                    answer = "Claridad";
+                    break;
+                default:
+                    answer = "Por favor, selecciona una imagen antes de comprobar.";
+            }
+
+            document.getElementById("result").innerText = answer;
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.5.4/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'cube',
+            grabCursor: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+</html>

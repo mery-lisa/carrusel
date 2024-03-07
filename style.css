@@ -1,0 +1,17 @@
+/* Estilos CSS personalizados */
+
+/* Agrega un margen a la derecha de cada diapositiva */
+.swiper-slide {
+    margin-right: 15px;
+}
+
+/* Elimina el margen derecho del último slide */
+.swiper-slide:last-child {
+    margin-right: 0;
+}
+
+/* Ajusta el tamaño de las imágenes para que se ajusten al contenedor */
+img {
+    width: 100%;
+    height: auto;
+}
